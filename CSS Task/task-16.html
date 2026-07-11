@@ -12,25 +12,50 @@
         position: relative; 
         
         left: 40px;
-        border : 3px solid black
+        border : 3px solid black;
+        top: 10px;
+        background-color: rgb(0, 255, 255);
+        padding: 10px;
     }
 
     div.static{
         position: static;
         border: 3px solid;
+        background-color: rgb(255, 0, 0);
+        padding: 10px;
+        margin-bottom: 10px;
+        
+
     }
 
     div.absolute{
         position: absolute;
         border: 3px solid rgb(205, 24, 24);
+        top: 40px;
+        left: 40px;
+        background-color: rgb(0, 255, 255);
+        padding: 10px;
     }
 
 
     div.fixed{
         position: fixed;
         border: 3px solid rgb(35, 130, 42);
+        bottom: 50px;   
+        right: 30px;
+        background-color: rgb(0, 255, 255);
+        padding: 10px;
+        z-index: 2;
     }
 
+    .container{
+        position: relative;
+        border: 3px solid rgb(0, 0, 0);
+        background-color: rgb(255, 255, 0);
+        padding: 10px;
+        height: 200px;
+       
+    }
 
 
 
@@ -46,32 +71,35 @@
     </h1>
     <br>
 
+    <div class="static">
+        static normla left top on page..
+    </div>
+
+
+    <br>
+
     <div class="relative">
 
-        div Elements position realtive to left.
+        relative class is left 40px from top ans left of page.
     </div>
 
     <br>
-
-
-    <div class="static">
-        static CLASS
-    </div>
-
-
-    <br>
-
-    <div class="absolute">
-        absolute class
-    </div>
-
-    <br>
-
     <div class="fixed">
-        fixed class
+        fixed class pineed to the page not scrolled with the page.
 
     </div>
 
+    <br>
+
+
+    <div class="container">
+        <div class="absolute">
+            absolute class is left 40px from top ans left of container.
+        
+        </div>
+    </div>
+   
+   
 
 </body>
 </html>

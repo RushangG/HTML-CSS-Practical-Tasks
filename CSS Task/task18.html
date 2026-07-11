@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <title> Flexbox Layout </title>
+
+    <style>
+      
+
+        .navbar {
+            display: flex;
+            background-color: #aaa439;
+            padding: 10px;
+        }
+
+        .navbar a {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd; 
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            
+        }
+
+        .flex-column {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #cd9191;
+        }
+
+        @media (max-width: 1000px) {
+            .navbar {
+                flex-direction: column;
+                width: 150px;
+            }
+
+            .flex-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+             .navbar {
+                flex-direction: column;
+                width: 150px;
+            }
+
+            .flex-container {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Flexbox Layout</h1>
+
+    <nav class="navbar">    
+           <a href="#home">Home</a>
+           <a href="#services">Services</a>
+           <a href="#contact">Contact</a>
+    </nav>
+
+
+    <div class="flex-container">
+
+        <div class="flex-column"> 
+            <h2>Column 1</h2>
+            <p>Content for column 1.</p>
+        </div>    
+
+         <div class="flex-column"> 
+            <h2>Column 2</h2>
+            <p>Content for column 2.</p>
+        </div>    
+        
+         <div class="flex-column">
+            <h2>Column 3</h2>
+            <p>Content for column 3.</p>
+        </div>
+        
+        <div class="flex-column">
+            <h2>Column 4</h2>
+            <p>Content for column 4.</p>
+        </div>    
+
+        <div class="flex-column">
+            <h2>Column 5</h2>
+            <p>Content for column 5.</p>
+        </div>    
+
+        <div class="flex-column">
+            <h2>Column 6</h2>
+            <p>Content for column 6.</p>
+        </div>    
+
+        <div class="flex-column">
+            <h2>Column 7</h2>
+            <p>Content for column 7.</p>
+        </div>    
+
+        <div class="flex-column">
+            <h2>Column 8</h2>
+            <p>Content for column 8.</p>
+        </div>   
+        
+    </div>
+
+
+
+</body>
+</html>
