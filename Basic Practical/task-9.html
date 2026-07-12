@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Dropdown Menu</title>
+    <style>
+        
+
+        .hover-container {
+            position: relative;
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .hover-message {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            top: 50px;
+            left: 0;
+            z-index: 5;
+        }
+
+        .hover-container:hover .hover-message {
+            display: block;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-button {
+            background-color: white;
+            color: #333;
+            padding: 11px 20px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            min-width: 180px;
+            text-align: left;
+            font-family: Arial, sans-serif;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            z-index: 10;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+            max-height: 220px;
+            overflow-y: auto;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create a country Dropdown Menu</h1>
+
+    <div class="hover-container">
+        Hover Over Me
+        <div class="hover-message">Hello World</div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropdown-button" id="selected-country">Select a country</button>
+        <div class="dropdown-content">
+            <a href="#">India</a>
+            <a href="#">U.S.A</a>
+            <a href="#">Japan</a>
+            <a href="#">China</a>
+            <a href="#">Italy</a>
+            
+        </div>
+    </div>
+
+    
+</body>
+</html>

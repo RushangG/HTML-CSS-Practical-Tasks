@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Form with Styling </title>
+    <style> 
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #81d743;
+            border: 1px solid #000000;
+        }
+ 
+        form h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 0; 
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+        } 
+
+       
+
+       
+        button {
+            background-color: #52ba1e;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+
+    
+    <form action="task-4.html">
+        
+    <h1>Registration Form with Styling</h1>
+    <hr>
+
+    <div>
+        <label for="f-name"><b>Fulll Name: </b></label>
+        <input type="text" name="f-name" id="f-name"   placeholder="Enter Full Name" required>
+    </div>
+    <br>
+ 
+    <div>
+         <label for="email"><b>E-Mail: </b></label>
+         <input type="text" name="email" id="email" placeholder="Enter Email" required>
+    </div>
+    <br>
+
+    <div>
+        <label for="password"><b>Password: </b></label>
+        <input type="password" name="password" id="password" placeholder="" required>
+    </div>
+    <br>
+
+    <div>
+        <label for="confirm-password"><b>Confirm Password: </b></label>
+        <input type="password" name="confirm-password" id="confirm-password" placeholder="" required>
+    </div>
+
+    <br>
+      
+    <div>
+         <label for="gender"><b>Gender: </b></label>
+            
+            <input type="radio" name="gender" id="male" value="Male">
+            <label for="male">Male</label>
+          
+            <input type="radio" name="gender" id="female" value="Female">
+            <label for="female">Female</label>
+    
+    </div>
+
+    <br>
+
+    <div>
+            <label for="hobbies"><b>Hobbies:</b></label>
+
+            <input type="checkbox" id="sports" name="sports" value="sports">
+            <label for="sports">Sports</label>
+
+            <input type="checkbox" id="traveling" name="traveling" value="traveling">
+            <label for="traveling">Traveling</label>
+
+            <input type="checkbox" id="coding" name="coding" value="coding">
+            <label for="coding">Coding</label>
+
+            
+
+    </div>
+    <br>
+
+    <div>
+
+            <label for="country"><b>Select Country: </b></label>
+
+            <select name="country" id="country">
+                <option value="" disabled selected>Select Country</option>
+                <option value="IN">India</option>
+                <option value="CA">Canada</option>
+                <option value="GB">United Kingdom</option>
+            </select>
+
+    </div>
+    <br>
+    <br>
+    
+
+    <button type="submit"> Submit </button>
+    <hr>
+    </form>
+
+</body>
+</html>

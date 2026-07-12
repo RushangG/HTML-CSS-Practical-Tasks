@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing Table</title>
+    <style>
+       
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            margin: 0 auto;
+            background-color: #fff;
+            max-width: 900px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #505304;
+            color: white;
+            font-weight: bold; 
+            text-transform: uppercase;
+            font-size: 14px;
+        } 
+
+        /* alternate row colors */
+        tr:nth-child(even) {
+            background-color: #d1a9a9;
+        }
+
+        tr:hover {
+            background-color: #e9f5fd;
+        }
+
+        .available {
+            color: #27ae60;
+        }
+
+        .out-of-stock {
+            color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Product Listing</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Laptop</td>
+                <td>High-performance gaming laptop with 16GB RAM and 512GB SSD.</td>
+                <td>65,500 RS.</td>
+                <td class="available">In Stock</td>
+            </tr>
+            <tr>
+                <td>Smartphone</td>
+                <td>Latest model with 128GB storage and 108MP camera.</td>
+                <td>35,0000 RS.</td>
+                <td class="available">In Stock</td>
+            </tr>
+            <tr>
+                <td>Wireless Headphones</td>
+                <td>Noise-canceling over-ear headphones with 30-hour battery life.</td>
+                <td>5000 RS.</td>
+                <td class="out-of-stock">Out of Stock</td>
+            </tr>
+            <tr>
+                <td>Smart Watch</td>
+                <td>Water-resistant fitness tracker with heart rate monitor.</td>
+                <td>7,500 RS.</td>
+                <td class="available">In Stock</td>
+            </tr>
+            <tr>
+                <td>Gaming Mouse</td>
+                <td>Ergonomic wired mouse with adjustable DPI and RGB lighting.</td>
+                <td>1,000 RS.</td>
+                <td class="available">In Stock</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

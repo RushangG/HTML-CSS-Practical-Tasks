@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Photo Gallery</title>
+    <style>
+      
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .gallery-container {
+            column-count: 3;
+            column-gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+      }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+
+        @media (max-width: 900px) {
+            .gallery-container {
+                column-count: 2;
+                column-gap: 15px;
+            }
+            .gallery-item {
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-container {
+                column-count: 1;
+                column-gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Responsive Photo Gallery</h1>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4ifAPkvjBxGuPA74qvyJBU7TOayHB_eXDuSnNU4YqRw&s=10" alt="image not found">
+        </div>
+        <div class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDsMD1OwlcO0b_QfvLaDcouBGlynTN_md7UO3NKIg2mA&s=10" alt="Foggy Mountains">
+        </div>
+        <div class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXz_uXJ3pWNzndxv4HtU9QZroaxEyo1AkC1iMoUHe6Uw&s=10" alt="Sun">
+        </div>
+        <div class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDzpOn3H-C67KLR8_kWSxP9B5K3a2gb2_AhMijZcRvWQ&s=10" alt="Sunset Lake">
+        </div>
+
+        <div class="gallery-item"> 
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYG2_uXFz7i0wGGey5YQqChon5LzImvMEl5C9nU2Nirg&s=10" alt="image 2">
+        </div>
+
+       
+        <div class="gallery-item">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/060/117/855/small/red-rose-is-the-main-focus-of-the-image-with-a-blue-background-and-a-few-other-flowers-in-the-background-the-rose-is-the-most-prominent-and-beautiful-flower-in-the-picture-photo.jpeg" alt="img - 3">
+        </div>
+    </div>
+
+</body>
+</html> 

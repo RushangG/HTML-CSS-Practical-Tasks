@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Animations</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: myanimation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        } 
+ 
+        @keyframes myanimation {
+            0% { left: 0px; }
+            25% { left: 200px; background-color: yellow; }
+            50% { left: 400px; }
+            75% { left: 600px; background-color: green; }
+            100% { left: 800px; background-color: blue; }
+           
+        }
+    </style> 
+</head>
+<body>
+    <h1>Animations using Keyframes</h1>
+    <div class="box"></div>
+</body>
+</html>
