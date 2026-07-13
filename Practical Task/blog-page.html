@@ -3,162 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Section Blog Page</title>
+     
+    <title> Blog Page </title>
+
     <style>
-        
+        html {
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            border: 1px solid #000000;
+        }
 
         header {
-            background-color: #544727;
-            color: white;
-            padding: 10px;
+            background-color: #d5cccc;
+            margin: 0;
             text-align: center;
         }
 
-        header h1 {
+        h1 {
             margin: 0;
-        }
-
-        header p {
-            margin: 5px;
-            color: #f8eeee;
+            font-size: 2.5em;
+            color: #333;
         }
 
         nav {
-            background-color: #444;
-            text-align: left;
+            background-color: #333;
+            width: 100%;
+            margin-top: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
             padding: 10px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #083756;
-        }
-
-        .main-container {
-            max-width: 1000px;
-            margin: 20px auto;
             display: flex;
-            gap: 20px;
-            padding: 0 15px;
+            justify-content: left;
+
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
         }
 
         main {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .articals {
             flex: 3;
+            margin-right: 10px;
         }
 
-        aside {
-            flex: 1;
-            background-color: white;
+        .articals article {
+            margin: 10px;
             padding: 20px;
+            background-color: #d4c4aa;
             border-radius: 5px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .articals article:hover {
+            transform: scale(1.02);
             
+           
         }
 
-        article {
-            background-color: white;
+        
+
+        .sidebar {
+            flex: 1;
+            background-color: #f0f0f0;
             padding: 20px;
-            margin-bottom: 20px;
+            margin: 10px;
             border-radius: 5px;
         }
 
-        article h2 {
+        .sidebar h3 {
             margin-top: 0;
-            color: #2c3e50;
+            border-bottom: 2px solid #333;
+            text-align: left;
+            font-family: "Times New Roman", serif;
+            font-size: 1.5em;
         }
 
-      
-
-        aside h3 {
-            margin-top: 0;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-            color: #2c3e50;
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
         }
 
-        aside ul {
-            padding-left: 20px;
+        .sidebar ul li {
+            margin-bottom: 5px;
         }
 
-        aside ul li {
-            margin-bottom: 8px;
+        .sidebar ul li a {
+           
+            color: #333;
+            transition: color 0.3s;
         }
 
-        aside ul li a {
-            color: #3498db;
-            text-decoration: none;
+        .sidebar ul li a:hover {
+            color: #ffcc00;
         }
 
-        aside ul li a:hover {
-            text-decoration: underline;
-        }
 
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 15px;
-            margin-top: 30px;
+            padding: 10px 0;
+            margin-bottom: 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
-        @media (max-width: 768px) {
-            .main-container {
-                flex-direction: column;
-            }
-            
-        }
     </style>
+
 </head>
 <body>
 
     <header>
-        <h1>My Blog</h1>
-        <p>A place where I share my thoughts.</p>
+        <div class="header">
+            <h1>My Blog</h1>
+        </div>
+
     </header>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Articles</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
     </nav>
 
-    <div class="main-container">
-        <main>
+    <main>
+        
+        
+        <div class="articals">
             <article>
-                <h2>Understanding CSS Flexbox</h2>
-                <p>Posted on July 11, 2026 by User</p>
-                <p>Flexbox is a powerful one-dimensional layout system that allows you to align items in columns or rows easily. By turning a container into a flex container using flex child items gain flexible dimensions and alignment controls.</p>
-                <p>Using properties like justify-content and align-items, we can center components, space them out evenly, or wrap them dynamically without calculating margin hacks.</p>
+                <h2>Article 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </article>
 
             <article>
-                <h2> HTML </h2>
-                <p>Posted on July 10, 2026 by User</p>
-                <p>Semantic HTML introduces tags that describe the meaning of their wrapped content rather than its presentation. Elements like header, nav, main, and article help structure documents logically.</p>
-                <p>This improves web accessibility, assists screen readers, and helps search engine crawlers rank your page correctly.</p>
+                <h2>Article 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
             </article>
-        </main>
 
-        <aside>
-            <h3>About Me</h3>
-            <p>Welcome! I'm User, a full stack developer who loves creating simple and responsive web layouts.</p>
-            <h3>Recent Posts</h3>
-            <ul>
-                <li><a href="#">CSS Flexbox</a></li>
-                <li><a href="#">HTML  </a></li>
-                <li><a href="#">CSS Grid vs Flexbox</a></li>
-            </ul>
-        </aside>
-    </div>  
+            <article>
+                <h2>Article 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </article>
+            
+            <article>
+                <h2>Article 4</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </article>
+
+            <article>
+                <h2>Article 5</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </article>
+        </div>
+
+        <div class="sidebar">
+            <aside>
+                <h3>Recent Posts</h3>
+                <ul>
+                    <li><a href="#">Post 1</a></li>
+                    <li><a href="#">Post 2</a></li>
+                    <li><a href="#">Post 3</a></li>
+                </ul>
+
+
+                <h3>Archives</h3>
+                <ul>
+                    <li><a href="#">January 2024</a></li>
+                    <li><a href="#">February 2024</a></li>
+                    <li><a href="#">March 2024</a></li>
+                </ul>
+            </aside>
+        <div>
+
+
+    </main>
 
     <footer>
-        <p>2026 , All rights reserved.</p>
+        <p> All rights reserved. </p>
     </footer>
 
 </body>

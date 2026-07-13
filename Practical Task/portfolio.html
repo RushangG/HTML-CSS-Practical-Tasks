@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rushang Gajera - Portfolio</title>
-    <style>
-       
 
+    <title>Rushang Gajera - Portfolio</title>
+
+    <style>
         html {
             scroll-behavior: smooth;
         }
 
         header {
-            background-color: #84d51b;
+            background-color: #053812;
             padding: 15px;
             text-align: center;
             position: sticky;
@@ -28,7 +29,7 @@
         }
 
         nav a:hover {
-            color: #092f48;
+            color: #0ce4ab;
         }
 
         .container {
@@ -40,11 +41,27 @@
         }
 
         h2 {
-            border-bottom: 2px solid #84d51b;
+            border-bottom: 2px solid #040503;
             padding-bottom: 5px;
             color: #333;
             margin-top: 30px;
         }
+
+        #about {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        img {
+            display: block;
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+            border-radius: 40%;
+            border: 2px solid #030303;
+        }
+
 
         .info {
             text-align: center;
@@ -73,18 +90,19 @@
             text-decoration: none;
         }
 
-        .project-card, .edu-item {
+        .project-card,
+        .edu-item {
             padding: 15px 0;
             border-bottom: 1px solid #eee;
         }
 
-        .project-title, .edu-title {
+        .project-title,
+        .edu-title {
             font-size: 18px;
             display: flex;
             justify-content: space-between;
         }
 
-     
 
         .skills-list p {
             margin: 8px 0;
@@ -114,58 +132,78 @@
     </header>
 
     <div class="container">
+
         <section id="about">
-            <div class="info">
-                <h1>Rushang Gajera</h1>
-                <p>Full Stack Developer</p>
-            </div>
+            <img src="../HTML Task/public/Rushang_Gajera.jpg" alt="Rushang Gajera">
 
-            <div class="contact-info">
-                <a href="tel:+916359517904">+91 6359517904</a> | 
-                <a href="mailto:gajerarushang17@gmail.com">gajerarushang17@gmail.com</a> | 
-                <a href="https://github.com/RushangG" target="_blank">GitHub</a> | 
-                <a href="https://linkedin.com/in/rushang-gajera-028418267" target="_blank">LinkedIn</a>
-            </div>
 
-            <h2>Profile</h2>
-            <p>
-                Full Stack Developer with 6 months of hands-on industry experience contributing to a production ERP system. Skilled in building scalable web applications using React.js, Node.js, Express.js, MongoDB, RESTful APIs, and PostgreSQL relational databases. Strong foundation in software development, backend development, and problem-solving, with experience collaborating in team-based environments to deliver reliable software solutions.
-            </p>
+            <div class="about-content">
+
+                <div class="info">
+                    <h1>Rushang Gajera</h1>
+                    <p>Full Stack Developer</p>
+                </div>
+
+                <div class="contact-info">
+                    <a href="tel:+916359517904">+91 6359517904</a> |
+                    <a href="mailto:gajerarushang17@gmail.com">gajerarushang17@gmail.com</a> |
+                    <a href="https://github.com/RushangG" target="_blank">GitHub</a> |
+                    <a href="https://linkedin.com/in/rushang-gajera-028418267" target="_blank">LinkedIn</a>
+                </div>
+
+                <h2>Profile</h2>
+                <p>
+                    Full Stack Developer with 6 months of hands-on industry experience contributing to a production ERP
+                    system. Skilled in building scalable web applications using React.js, Node.js, Express.js, MongoDB,
+                    RESTful APIs, and PostgreSQL relational databases. Strong foundation in software development,
+                    backend development, and problem-solving, with experience collaborating in team-based environments
+                    to deliver reliable software solutions.
+                </p>
+
+            </div>
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
-            
+
             <div class="project-card">
                 <div class="project-title">
-                    <span>SocialEcho Platform</span>
+                    <span><strong>SocialEcho Platform</strong></span>
                 </div>
                 <div>Tech Stack: React.js, Node.js, Express.js, MongoDB</div>
-                <p>Developed a full-stack social networking platform with communities, posts, and comments. Implemented JWT authentication, role-based access control, and RESTful APIs. Built an admin dashboard for user management and content moderation.</p>
+                <p>Developed a full-stack social networking platform with communities, posts, and comments. Implemented
+                    JWT authentication, role-based access control, and RESTful APIs. Built an admin dashboard for user
+                    management and content moderation.</p>
             </div>
 
             <div class="project-card">
                 <div class="project-title">
-                    <span>AccentAI</span>
+                    <span><strong>AccentAI</strong></span>
                 </div>
                 <div>Tech Stack: React.js, Spring Boot, MySQL, Python, Machine Learning</div>
-                <p>Developed a web application for real-time English accent detection from uploaded audio samples. Integrated machine learning models with Spring Boot APIs for prediction and processing. Built a responsive React.js interface for seamless audio upload and result visualization.</p>
+                <p>Developed a web application for real-time English accent detection from uploaded audio samples.
+                    Integrated machine learning models with Spring Boot APIs for prediction and processing. Built a
+                    responsive React.js interface for seamless audio upload and result visualization.</p>
             </div>
 
             <div class="project-card">
                 <div class="project-title">
-                    <span>i-Medicare</span>
+                    <span><strong>i-Medicare</strong></span>
                 </div>
                 <div>Tech Stack: React.js, Node.js, Express.js, MongoDB</div>
-                <p>Developed a hospital management system with role-based authentication and dashboards. Built REST APIs for appointment scheduling, patient records, and administrative workflows. Implemented secure access controls and responsive user interfaces.</p>
+                <p>Developed a hospital management system with role-based authentication and dashboards. Built REST APIs
+                    for appointment scheduling, patient records, and administrative workflows. Implemented secure access
+                    controls and responsive user interfaces.</p>
             </div>
 
             <div class="project-card">
                 <div class="project-title">
-                    <span>WealthPlus</span>
+                    <span><strong>WealthPlus</strong></span>
                 </div>
                 <div>Tech Stack: Django, Python, MySQL</div>
-                <p>Developed a personal finance management application for tracking income, expenses, and savings. Designed and optimized MySQL database schemas for efficient financial data management. Implemented analytics and reporting features to provide actionable financial insights.</p>
+                <p>Developed a personal finance management application for tracking income, expenses, and savings.
+                    Designed and optimized MySQL database schemas for efficient financial data management. Implemented
+                    analytics and reporting features to provide actionable financial insights.</p>
             </div>
         </section>
 
@@ -212,4 +250,5 @@
     </div>
 
 </body>
+
 </html>
