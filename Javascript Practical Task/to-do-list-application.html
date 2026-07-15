@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List Application</title>
+
+    <style>
+        main {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        #add-task-form, #task-list {
+            width: 45%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin : 10px;
+        }
+
+        #todo-form {
+            display: flex;
+            flex-direction: column;   
+           
+
+        }
+
+       #todo-form div{
+        margin-bottom: 10px;
+       }
+
+       label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+       }
+
+       input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        height: 50px;
+        border-radius: 5px;
+       }
+
+       button {
+         padding: 10px 10px;
+         background-color: #d6a229;
+         color: rgb(0, 0, 0);
+         border-radius: 5px;
+         border: 1px solid #080707;
+         cursor: pointer;
+         transition: background-color 0.3s ease;
+       }
+       
+       button:hover {
+        background-color: #c1ad46;
+       }
+
+       #task-list-header {
+        margin-bottom: 10px;
+        background-color: #d6a229;
+        padding: 10px;
+        border-radius: 5px;
+       }
+
+       h2 {
+        font-size: 24px;
+        font-family: Arial, sans-serif;
+       }
+
+       textarea {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        height: 100px;
+        border-radius: 5px;
+        resize : vertical;
+       }
+
+       #task-message {
+        font-size: 14px; 
+       
+       }
+
+       #task-card {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+
+       }  
+
+        .task-card-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width : 85%;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f9f9f9;
+         }
+
+         .task-card-item h3 {
+            margin-top: 0;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: underline;
+         }
+
+         .task-card-item p {
+            margin: 5px 0;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+         }
+         .task-card-item label {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+         }
+
+       
+       
+       @media (max-width:768px){
+        main {
+            flex-direction:column;
+            align-items:center;
+        }
+
+        #add-task-form, #task-list {
+            width: 90%;
+            margin-bottom: 20px;
+        }
+       }
+
+
+      
+
+
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <h1>To-do List Application</h1>
+        <span id="message"></span>
+    </header>
+
+    <main>
+        <div id="add-task-form">
+            <form id="todo-form">
+                <div> 
+                    <h2>Add Task</h2>
+                </div>    
+                <div> 
+                    <label for="task">Task:</label>
+                    <input type="text" id="task" name="task" required> 
+                </div> 
+                <div>
+                    <label for="description"> Description: </label>
+                    <textarea id="description" name="description"></textarea>
+                </div>    
+                <span id="task-message"></span>
+                <div>
+                    <button type="submit" id="add-task">
+                        Add Task
+                    </button>
+                </div> 
+                
+       
+
+            </form>
+        </div>
+
+        <div id="task-list">
+            
+
+            <div id="task-list-header"><h2>Task List</h2></div>
+
+            <div id="task-card">
+                
+                <!-- Task will be added here dynamically -->
+            </div>   
+
+        </div>
+
+    </main>
+
+    
+
+    <script>
+
+        class Task {
+
+            
+            constructor(task_name, description = '', id = Date.now(), status = false, date = new Date()) {
+                this.task_name = task_name;
+                this.description = description;
+                this.date = date;
+                this.id = id;
+                this.status = status;
+            }
+
+            toggleStatus() {
+                this.status = !this.status;
+            }
+ 
+        }
+
+        class ToDoList {
+
+            constructor() {
+                
+              
+               
+
+                this.button = document.getElementById('add-task');
+                this.taskInput = document.getElementById('task');
+                this.taskCard = document.getElementById('task-card');
+                this.taskMessage = document.getElementById('task-message');
+                this.descriptionInput = document.getElementById('description');
+                 
+
+                this.button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    this.addTask();
+                });
+
+                this.fetchLocalStorageTasks();
+                this.showTasks();  
+
+
+            }
+
+          updateLocalStorage() {
+                localStorage.setItem('tasks', JSON.stringify(this.tasks)); 
+          }
+
+          //add local storage task only
+          fetchLocalStorageTasks() {
+               const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+               this.tasks = storedTasks.map(task => new Task(task.task_name, task.description, task.id, task.status, task.date));
+          }
+
+
+          addTask() {
+             const taskName = this.taskInput.value.trim();
+             const taskDescription = this.descriptionInput.value.trim();
+             if(taskName === '' || taskDescription === '') {
+                this.taskMessage.textContent = 'Please enter a task and description';
+                this.taskMessage.style.color = 'red';
+
+                return;
+             }
+
+
+
+             const newTask = new Task(taskName, taskDescription, Date.now(), false, new Date());
+             this.tasks.push(newTask);
+
+             this.updateLocalStorage();
+             this.taskMessage.textContent = 'Task added successfully';
+             this.taskMessage.style.color = 'green';
+             
+
+             setTimeout(() => {
+                this.taskMessage.textContent = '';
+             }, 2000);
+             
+             this.resetForm();
+             this.showTasks();
+          } 
+
+          showTasks(){  
+                
+                this.taskCard.innerHTML = ''; // Clear existing tasks
+
+                if(this.tasks.length === 0) {
+                    this.taskCard.innerHTML = '<p>No tasks available.</p>';
+                    return;
+                }
+
+                this.tasks.forEach(task => {
+                   const taskElement = document.createElement('div');
+                   taskElement.classList.add('task-card-item');
+                
+                   taskElement.innerHTML = `
+                     <h3>${task.task_name}</h3>
+                    <p>${task.description}</p>
+                    <p>Status: ${task.status ? 'Completed' : 'Pending'}</p>
+                    <p>Date: ${new Date(task.date).toLocaleString()}</p>
+                    <label>
+                        <input  type="checkbox"   value="${task.status ? 'checked' : ''}" class="status-checkbox">
+                        <span> Mark as Completed </span>
+                    </label> 
+                    <button class="delete-button"}">Delete</button>
+                    <button class="edit-button"}">Edit</button>
+
+                   `;
+
+                    const checkbox = taskElement.querySelector('.status-checkbox');
+                    checkbox.addEventListener('change', () =>{
+                        this.toggleTaskStatus(task.id);
+                    })
+                    
+                    
+                    this.taskCard.appendChild(taskElement);
+
+                    
+                });
+          }
+
+          toggleTaskStatus(Id) {
+            const task = this.tasks.find(task => task.id == Id);
+            if(task) {
+                task.toggleStatus();
+                
+                this.updateLocalStorage();
+                this.showTasks();
+            }
+          }
+
+
+
+          resetForm(){
+            this.taskInput.value = '';
+            this.descriptionInput.value = '';
+          }
+            
+          
+
+        }
+
+
+      
+
+
+      document.addEventListener('DOMContentLoaded', (event) => {
+        
+        new ToDoList();
+      })
+
+
+
+    </script>
+
+</body>
+</html> 
