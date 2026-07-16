@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>User Data</h1>
+        </header>
+
+        <table>
+            <div class="label">
+                <span>Search Users... <span>
+            </div>
+            <div>
+                <span class="message"></span>
+                <br>
+                <input type="text" id="search-box" placeholder="Search users by Name and Email">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <thead>
+                <tr>
+                    <th>NO.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody id="user-table-body">
+                <!-- User data -->
+            </tbody>
+        </table>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

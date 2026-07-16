@@ -1,0 +1,58 @@
+  main {
+      font-family: Arial, sans-serif;
+
+  }
+
+  header {
+      text-align: center;
+      margin-bottom: 1px;
+      background-color: #ffe6bb;
+      padding: 1px;
+      border-radius: 10px;
+  }
+
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+  }
+
+  th,
+  td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+  }
+
+  .label {
+      color: #393333;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+  }
+
+  input[type="text"] {
+      width: 20%;
+      padding: 8px;
+      margin-top: 0px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+
+  thead {
+      background-color: #d2f5dc;
+  }
+
+  button {
+      padding: 8px 12px;
+      background-color: #69d26c;
+      color: white;
+      border: 1px solid #2c2929;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  button:hover {
+      background-color: #4CAF50;
+  }

@@ -91,7 +91,7 @@
         
         async function analyzeText() {
 
-            const textInput = String(document.getElementById('text-input').value);
+            const textInput = document.getElementById('text-input').value;
 
             if(textInput.trim() === ''){
                 alert('please enter some text for analysis.');
