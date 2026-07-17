@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Quiz Application</h1>
+    </header>
+    
+    <main>
+        <div class="quiz-box">
+        
+            <div id = "result-box">
+                <span id="que-number"></span>
+
+                <span id = "score"></span>
+            </div>
+
+            <div class="question-box">
+             
+                <p id="que-text"></p>
+            </div>
+
+            <form id ="quiz-form">
+            <div class="options-1">
+                <input type="radio" name="option" id="option1" value="1">
+                <label for="option1" id="option1-text"></label>
+            </div>  
+            <div class="options-2">
+                <input type="radio" name="option" id="option2" value="2">
+                <label for="option2" id="option2-text"></label>
+            </div>
+             <div class="options-3">
+                <input type="radio" name="option" id="option3" value="3">
+                <label for="option3" id="option3-text"></label>
+            </div>
+             <div class="options-4">
+                <input type="radio" name="option" id="option4" value="4">
+                <label for="option4" id="option4-text"></label>
+            </div>
+
+          
+            </form>
+           <div>
+            
+            <span id="message"></span>
+             <br>
+            <button class="next-button" id="next-button">Submit Ans</button>
+           
+            </div>
+        </div> 
+    </main> 
+    
+   <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+   header {
+       background-color: rgb(239, 223, 172);
+       padding: 5px;
+       text-align: center;
+   }
+
+   .quiz-box {
+       width: 80%;
+       margin: 0 auto;
+       background-color: rgb(229, 191, 134);
+       padding: 20px;
+       margin-top: 20px;
+       border-radius: 10px;
+   }
+
+   .next-button {
+       background-color: rgb(142, 222, 98);
+       padding: 10px;
+       border: 1px solid rgb(241, 241, 241);
+       border-radius: 5px;
+       cursor: pointer;
+       margin-top: 10px;
+       font-family: Arial, Helvetica, sans-serif;
+   }
+
+   .next-button:hover {
+       background-color: rgb(100, 200, 50);
+   }
+
+
+   #score {
+       font-weight: bold;
+       margin-top: 10px;
+       margin-left: 60px;
+       font-size: 20px;
+   }
+
+   #que-number {
+
+       font-weight: bold;
+       margin-top: 10px;
+       font-size: 20px;
+   }
