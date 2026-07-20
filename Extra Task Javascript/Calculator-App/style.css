@@ -1,0 +1,55 @@
+header {
+
+    background-color: rgb(246, 246, 163);
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+    margin-left: 10px;
+}
+
+main {
+    text-align: center;
+    margin: 10px;
+    background-color: bisque;
+    padding: 10px;
+    height: 250px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+label {
+    font: 1em sans-serif;
+    margin: 2px;
+}
+
+input {
+    margin: 5px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+button {
+    margin: 10px;
+    width: 50px;
+    border-radius: 5px;
+    background-color: beige;
+
+}
+
+button:hover {
+    background-color: rgb(225, 165, 92);
+}
+
+
+
+#result-box {
+
+    background-color: rgb(215, 189, 70);
+    width: 10rem;
+    height: 4rem;
+    border: 2px solid black;
+    border-radius: 3px;
+}

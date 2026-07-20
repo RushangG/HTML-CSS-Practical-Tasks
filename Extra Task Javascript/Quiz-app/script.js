@@ -78,6 +78,7 @@ async function loadQuestion(currentQues = 0) {
 async function checkAnswer() {
     event.preventDefault();
 
+    // reset the quiz.
     if (currentQues >= questions.length) {
         currentQues = 0;
         score = 0;

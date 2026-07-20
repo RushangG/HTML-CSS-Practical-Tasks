@@ -1,66 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator App</title>
+
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
     <header>
         <h1>Calculator App</h1>
     </header>
 
     <main>
-        <div class="num1"> 
-            <label for="num1">num1</label>
-            <input type="text" name="num1" id="num1">
+        <div class="num1">
+            <label for="num1">num1 : </label>
+            <input type="number" name="num1" id="num1" placeholder="Enter valid number">
         </div>
 
         <div class="num1">
-            <label for="num2">num2</label>
-            <input type="text" name="num2" id="num2">
+            <label for="num2">num2 : </label>
+            <input type="number" name="num2" id="num2" placeholder="Enter valid number">
         </div>
 
         <button id="sum">+</button>
-         <button id="sub">-</button>
-          <button id="multi">*</button>
-           <button id="divide">/</button>
+        <button id="sub">-</button>
+        <button id="multi">*</button>
+        <button id="divide">/</button>
 
-           <p id="result-box">ss</p>
+        <div>
+            <p id="result-box"></p>
+        </div>
 
 
-        
     </main>
 
-    <script>
-
-       
-
-        const sumButton = document.getElementById("sum");
-        const subButton = document.getElementById("sub");
-        const multiButton = document.getElementById("multi");
-        const divButton = document.getElementById("div");
-      
-        const resultBox = document.getElementById("result-box");
-        const num1 = document.getElementById("num1").value;
-        const num2 = document.getElementById("num2").value;
-        let result;
-
-         async function  sum() {
-            console.log(num1);
-            console.log(num2);
-            result =  parseFloat(num1) + parseFloat(num2);  
-              console.log(result) 
-             await showResult();
-        }
-
-        async function  showResult() {
-            resultBox.innerHTML = result;
-        }
-
-        sumButton.addEventListener("click", () => sum());
-
-
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>

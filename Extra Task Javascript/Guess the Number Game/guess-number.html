@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+    <style>
+        header{
+            text-align: center;
+            font-size: 1rem;
+            background-color: #bbb125;
+            padding: 5px;
+        }
+        main{
+            text-align: center;
+            font-size: 1rem;
+            background-color: #f2f2f2;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #input-box{
+            margin: 10px;
+            padding: 10px;
+        }
+        
+        input{
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #submit-button{
+            margin: 10px;
+            padding: 10px;
+            background-color: #bbb125;
+            border-radius: 5px;
+        }
+
+        #correct-number{
+            margin: 10px;
+            padding: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        #submit-button:hover{
+            background-color: #ffe70c;
+            color: #000000;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Guess the Number Game</h1>
+    </header>
+
+    <main>
+        <div id="attempts"></div>
+        <div id = "input-box">
+            <label for="number-guess">Enter Your Number Range (1 - 100):</label>
+            <br>
+            <input type="number" id="number-input"  placeholder="Guess the number">
+
+        </div>
+
+        <div id="message">
+            
+        </div>
+
+        <div>
+            <button id="submit-button">Submit Guess</button>
+        </div>
+
+        <div id="correct-number"> 
+            correct number :  ?
+        </div>
+
+    </main>
+    <script>
+
+        
+        let randomNumber, attempts = 0;
+        const InputNum = document.getElementById("number-input");
+        const submitButton = document.getElementById("submit-button");
+        const  attemptScore = document.getElementById("attempts");
+        const correctMessage = document.getElementById("correct-number");
+        const hintMessage = document.getElementById("message");
+ 
+        // range 1 to 100;
+        function getrandomNumber(){
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+            console.log(randomNumber);
+        }
+
+        //check the number 
+        async function checkNumber(){
+
+            // if correct guees reset game.
+            if(submitButton.innerText == "Again play"){
+                resetGame();
+                return;
+            }
+
+            // get input and validate
+            const number = InputNum.value;
+            if(number == "") {
+                alert("Enter number");
+                InputNum.focus();
+                return;
+            }
+
+            
+
+            InputNum.value="";
+            console.log(number);
+            
+            await attemptsCount();
+            let diffrence = (randomNumber - number);
+            diffrence = diffrence < 0 ? -1*diffrence : diffrence;
+
+            // check the number with random number
+            if(number == randomNumber){
+                console.log("match");
+                InputNum.value = number;
+                correctMessage.innerHTML=`correct number : ${randomNumber} Congratulations!`;
+                submitButton.innerText = "Again play";
+                 hintMessage.innerHTML=`Perfect Guess...`;
+
+            }
+            else if( diffrence <= 10){
+                  hintMessage.innerHTML=`Near to correct Guess...`;
+            }
+            else if(number < randomNumber) {
+                hintMessage.innerHTML=`Too Low to correct Guess...`;
+                console.log("notmatch < random")
+            }
+            else {
+                hintMessage.innerHTML=`Too High to correct Guess...`;
+                console.log("notmatch > random")
+            }
+            
+        }
+
+        //reset the game
+        async function  resetGame() {
+            getrandomNumber();
+            submitButton.innerText = "Submit Guess";
+            hintMessage.innerHTML="";
+            InputNum.value="";
+            correctMessage.innerHTML=`correct number = ?`;
+            attemptScore.innerHTML = "";
+            attempts = 0;
+            return;
+
+        }
+
+        // update the attempts count
+        async function attemptsCount() {
+                attempts++;
+                attemptScore.innerHTML = `Attempt : ${attempts}.`;
+
+        }
+
+        //dom loaded.
+        document.addEventListener("DOMContentLoaded", getrandomNumber);
+        submitButton.addEventListener("click", checkNumber);
+    </script>
+</body>
+</html>
