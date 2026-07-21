@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Application</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Task Management Application</h1>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <form class="task-form" action="#">
+                <label for="task-description">Task description</label>
+                <textarea id="task-description-id" name="task-description"
+                    placeholder="Enter task description"></textarea>
+
+                <label for="task-status">Task status</label>
+                <select id="task-status" name="task-status">
+                    <option value="in-complete">InComplete</option>
+                    <option value="completed">Completed</option>
+                </select>
+
+                <button type="submit" id="add-task-button">Add Task</button>
+            </form>
+        </div>
+
+
+
+        <div class="task-list">
+            <div class="table-header">
+                <div>
+                    <h2>Task List : </h2>
+                </div>
+                <div class="filter-container">
+                    <label for="task-status">Status:</label>
+                    <select id="status-filter">
+                        <option value="all">All</option>
+                        <option value="in-complete">InComplete</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task Number</th>
+                            <th>Task Description</th>
+                            <th>Task Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body" class="task-table-body">
+                        <!-- task data will be dynamically add here. -->
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

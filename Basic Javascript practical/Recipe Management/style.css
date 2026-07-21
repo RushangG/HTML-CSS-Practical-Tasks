@@ -1,0 +1,90 @@
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-family: "Times New Roman", serif;
+    border-bottom: 2px solid #040503;
+    padding-bottom: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+
+
+form {
+    width: 500px;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select {
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.recipe-list {
+    width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.search-box {
+    flex-direction: row;
+    display: flex;
+    margin-bottom: 10px;
+    width: 60%;
+    margin-left: 40%;
+}
+
+@media (max-width: 1000px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form,
+    .recipe-list {
+        width: 90%;
+    }
+}
