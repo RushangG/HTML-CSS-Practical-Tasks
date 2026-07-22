@@ -1,0 +1,110 @@
+body {
+    background-color: rgb(255, 254, 253);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.create-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#add-button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #eeb661;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+
+}
+
+#input-form {
+    display: none;
+    background-color: rgb(230, 224, 51);
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 10%;
+}
+
+#form-builder {
+    display: none;
+    background-color: rgb(229, 234, 65);
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    right: 10%;
+}
+
+#form-builder h2,
+#input-form h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#form-builder label,
+#input-form label {
+
+    margin-bottom: 10px;
+    font-size: 16px;
+
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
+textarea {
+    resize: vertical;
+}
+
+#add-to-form,
+#submit-button {
+    padding: 10px;
+    background-color: #e1b350;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+@media (max-width: 978px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #input-form,
+    #form-builder {
+        position: static;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+
+}

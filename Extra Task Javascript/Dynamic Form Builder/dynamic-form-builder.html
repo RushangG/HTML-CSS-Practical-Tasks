@@ -1,54 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Form Builder</title>
-    <style>
 
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>
             Dynamic Form Builder
         </h1>
+
     </header>
 
-    <main>
-        <form id="form-input">
-            
-
-
-            <button type="submit">submit</button>
-        </form>
-    </main>
-
-    <div>
-        <button id="add-button"> Add Form fild </button>
+    <div class="create-button">
+        <button type="button" id="add-button"> Create New Form </button>
     </div>
 
-    <script>
-        const addButton = document.getElementById("add-button");
+    <main>
 
-         function  formBuilder() {
-            let inputCount = prompt("Enter number of fields : ");
+       <!-- dynamic form   -->
+        <div id="input-form">
+            <h2>Input Form</h2>
+            <form action="#" id="dynamic-form">
 
-            console.log(inputCount);
+                <div id="fields-container"></div>
 
-            getInputType();
-            
-        }
+                <br>
+                <div>
+                    <button type="submit" id="submit-button">submit</button>
+                </div>
 
-        function getInputType() {
-            
-            let inputType = prompt("Enter input type", "text");
+            </form>
+        </div>
 
-            console.log(inputType);
-        }
+        <br>
+       <!-- form builder -->
+        <div id="form-builder">
+            <h2>Form Builder</h2>
+            <div id="message-div"></div>
+            <form action="#" id="input-field">
+                <div>
+                    <br>
+                    <label for="input-type">Input Type : </label>
+                    <select name="input-type" id="input-type" required>
+                        <option value="text">Text</option>
+                        <option value="number">Number</option>
+                        <option value="email">Email</option>
+                        <option value="textarea">Text Area</option>
+                        <option value="password">Password</option>
+                        <option value="checkbox">Checkbox</option>
+                        <option value="radio">Radio</option>
+                        <option value="date">Date</option>
+                        <option value="datetime-local">Datetime Local</option>
+                        <option value="time">Time</option>
+                        <option value="week">Week</option>
+                        <option value="month">Month</option>
+                        <option value="url">Url</option>
+                        <option value="color">Color</option>
 
 
-        addButton.addEventListener("click" , formBuilder);
-    </script>
+                    </select>
+                    <br><br>
+
+                    <label for="label-name">Label Name : </label>
+                    <input type="text" name="label" id="label-name" placeholder="Enter Label" required>
+                    <br><br>
+                    <label for="placeholder-text">Placeholder Text : </label>
+                    <input type="text" name="placeholder" id="placeholder-text" placeholder="Enter Placeholder"
+                        required>
+                    <br>
+                    <br>
+
+                </div>
+                <button type="submit" id="add-to-form">Add TO Form</button>
+            </form>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
