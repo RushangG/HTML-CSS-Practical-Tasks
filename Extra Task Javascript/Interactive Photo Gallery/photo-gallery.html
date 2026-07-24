@@ -7,138 +7,7 @@
 
     <title>Interactive Photo Gallery</title>
 
-    <style>
-        
-        h1 { 
-            text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-            font-family: "Times New Roman", serif;
-            border-bottom: 2px solid #040503;
-            padding-bottom: 10px;
-        }
-
-        .gallery-container {
-            column-count: 3;
-            column-gap: 3px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-
-        .gallery-container img {
-            display: inline-block;
-            width: 100%;
-            margin-bottom: 3px;
-            height: auto;
-            transition: transform 0.5s;
-            cursor: pointer;
-        }
-
-        .gallery-container img:hover {
-            transform: scale(1.1);
-            
-        } 
-        .input-image {
-            text-align: center;
-            margin-bottom: 20px;
-            
-        }
-
-        .image-form {
-            display: inline-block;
-        }
-        label {
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        input[type="text"] {
-            padding: 5px;
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        #upload-image
-        {
-                padding: 5px 10px;
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-            /* //buton at image bottom in center. */
-        #delete-img {
-
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-
-
-
-        }
-
-
-        #image-model {
-           display: none; /* Controlled via JS */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 1000; 
-            background-color: rgba(0, 0, 0, 0.8); /* Dark background overlay covering full screen */
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        #image-model span.close {
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            color: #fff;
-            font-size: 35px;
-            font-weight: bold;
-            cursor: pointer;
-           
-        }
-        #model-contex {
-            position: relative; /* Essential wrapper: bounds the absolute button within the image space */
-    max-width: 85%;
-    max-height: 85%;
-        }
-
-        #model-contex img {
-           max-width: 100%;
-            max-height: 85vh;
-            display: block;
-            
-        }
-
-
-
-        @media (max-width: 900px) {
-            .gallery-container {
-                column-count: 2;
-                column-gap: 3px;
-            }
-
-            .gallery-container img {
-                margin-bottom: 3px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .gallery-container {
-                column-count: 1;
-                column-gap: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
@@ -147,181 +16,48 @@
     <header>
         <h1>Interactive Photo Gallery</h1>
     </header>
+
     <main>
 
-    <div class="input-image">
-        <form id="image-form">
-            <label for="image-url">Upload Image URL:</label>
-            <input type="text" placeholder="Enter Image URL" id="image-url" required>
-            <button type="submit" id="upload-image">Upload Image</button>
-        </form>
-    </div>
-
-    <div id="image-model">
-
-         <span class="close">&times;</span> 
-
-        <div id="model-contex">
-           
+        <div class="input-image">
+            <form id="image-form">
+                <label for="image-url">Upload Image URL:</label>
+                <input type="text" placeholder="Enter Image URL" id="image-url" required>
+                <button type="submit" id="upload-image">Upload Image</button>
+            </form>
         </div>
-        <br>
-        <div>
-        <button id="delete-img">Delete Image</button>
-        </div>
-    </div>
-
-    <div class="gallery-container">
 
 
 
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/060/117/855/small/red-rose-is-the-main-focus-of-the-image-with-a-blue-background-and-a-few-other-flowers-in-the-background-the-rose-is-the-most-prominent-and-beautiful-flower-in-the-picture-photo.jpeg"
+        <div class="gallery-container">
+
+            <!-- dynamically added images -->
+
+            <!-- <div class="gallery-img">
+             <span class="delete">&times;</span>
+             <img src="https://static.vecteezy.com/system/resources/thumbnails/060/117/855/small/red-rose-is-the-main-focus-of-the-image-with-a-blue-background-and-a-few-other-flowers-in-the-background-the-rose-is-the-most-prominent-and-beautiful-flower-in-the-picture-photo.jpeg"
             alt="img - 3">
+             </div> -->
+
+        </div>
 
 
+        <div id="image-model">
 
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcqqE3Dlxgtb7jEprVscJp3ct2FEJyAPPCejfU1SrSXA&s=10"
-            alt="image 5">
+            <span class="close">&times;</span>
 
+            <div id="model-contex"></div>
 
+            <br>
 
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYG2_uXFz7i0wGGey5YQqChon5LzImvMEl5C9nU2Nirg&s=10"
-            alt="image 6">
+            <div>
+                <button id="delete-img">Delete Image</button>
+            </div>
+        </div>
 
-
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc7wyb5waXZf-LnxlYOqajAQ42vyC07isV4TgwWa_zeA&s=10"
-            alt="image 7">
-
-
-
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9bny6poWo43RL0Nf0-9AuM8yOlqGrvkYsf9zJP_8KSQ&s=10"
-            alt="image 8">
-
-
-
-
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoq3h17gZAwUBn18rc9RqB88mgCySlEbnAlF_0F9NOxQ&s=10"
-            alt="image 9">
-
-
-
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4ifAPkvjBxGuPA74qvyJBU7TOayHB_eXDuSnNU4YqRw&s=10"
-            alt="image not found">
-
-
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDsMD1OwlcO0b_QfvLaDcouBGlynTN_md7UO3NKIg2mA&s=10"
-            alt="Foggy Mountains">
-
-
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXz_uXJ3pWNzndxv4HtU9QZroaxEyo1AkC1iMoUHe6Uw&s=10"
-            alt="Sun">
-
-
-
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDzpOn3H-C67KLR8_kWSxP9B5K3a2gb2_AhMijZcRvWQ&s=10"
-            alt="Sunset Lake">
-
-
-
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcqqE3Dlxgtb7jEprVscJp3ct2FEJyAPPCejfU1SrSXA&s=10"
-            alt="image 5">
-
-
-
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYG2_uXFz7i0wGGey5YQqChon5LzImvMEl5C9nU2Nirg&s=10"
-            alt="image 6">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcqqE3Dlxgtb7jEprVscJp3ct2FEJyAPPCejfU1SrSXA&s=10"
-            alt="image 5">
-
-
-
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYG2_uXFz7i0wGGey5YQqChon5LzImvMEl5C9nU2Nirg&s=10"
-            alt="image 6">
-
-
-    </div>
     </main>
 
-    <script>
-        const uploadButton = document.getElementById('upload-image');
-        const imageUrlInput = document.getElementById('image-url');
-        const galleryContainer = document.querySelector('.gallery-container');
-        const urlForm = document.getElementById('image-form');
-        const imageModel = document.getElementById('image-model');
-        const modelContent = document.getElementById('model-contex');
-        const closeButton = document.querySelector('.close');
-        const imgUrl = document.querySelector('.gallery-container');
-        
-        const deleteButton = document.getElementById('delete-img');
-        async function uploadImage(){
-            const imageUrl = imageUrlInput.value.trim();
-
-            if(imageUrl === '') {
-                alert('Please enter a valid image URL.');
-                return;
-            }
-
-            imageUrlInput.value = '';
-
-            const img = document.createElement('img');
-            img.src = imageUrl;
-            img.alt = 'Image Not Found';
-
-            galleryContainer.appendChild(img);
-
-        }
-
-        async function setImgInModel(url){
-            imageModel.style.display = 'flex';
-            modelContent.innerHTML = `<img src="${url}" alt="Image Not Found" style="width: 100%;">`;
-        }
-
-        async function closeModel(){
-            imageModel.style.display = 'none';
-        }
-
-        async function deleteImage(){
-            const imgInModel = modelContent.querySelector('img');
-
-            if(!confirm('Are you sure you want to delete this image?')){
-                return;
-            }
-            
-            if(imgInModel){
-                const imgSrc = imgInModel.src;
-                const imgInGallery = Array.from(galleryContainer.querySelectorAll('img')).find(img => img.src === imgSrc);
-                if(imgInGallery){
-                    imgInGallery.remove();
-                }
-                closeModel();
-            }
-
-
-        }
-
-        urlForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            uploadImage();
-        });
-
-        imgUrl.addEventListener('click', (e) => {
-            if (e.target.tagName === 'IMG') {
-                setImgInModel(e.target.src);
-            }
-        });
-
-        closeButton.addEventListener('click', () => {
-            closeModel();
-        });
-
-        deleteButton.addEventListener('click', deleteImage);
-        document.addEventListener('click', (e) => {
-            if (e.target === imageModel)
-            {
-                closeModel();
-            }
-        });
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
